@@ -1,0 +1,77 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/components/myHeader/myHeader.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.myHeader_myHeader__emtic{
+    display: flex;
+    background-color: blueviolet;
+    justify-content: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 2px white
+}
+
+.myHeader_myLinks__9Bocl{
+    padding-left: 10px; 
+    padding-right: 10px;
+    color: black;
+    text-decoration: underline;
+    transition: color .3s ease;
+ }
+
+
+.myHeader_linkbox__DXBZc{
+    color: black;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    margin-inline-start: 10px;
+    border: solid 2px black; 
+    justify-content: center;
+    display: inline;
+    text-align: center;
+
+ }
+
+.myHeader_linkbox__DXBZc::before{
+    content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;   
+  transform: translateY(100%); 
+  transition: transform 0.5s ease;
+  z-index: 0; 
+}
+
+.myHeader_linkbox__DXBZc:hover::before{
+    transform: translateY(0);
+}
+
+.myHeader_linkbox__DXBZc > *{
+    position: relative;
+    z-index: 1;
+}
+
+.myHeader_myLinks__9Bocl:hover{
+    color:yellow;
+    
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/cardgame/cardGame.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.cardGame_myButton__XjZcd{
+    width: fit-content;
+    border: solid red 2px;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/card_game_backend/Cards/fireball/fireball.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.fireball_cardborder__PS4IG{
+    border: solid 2px red;
+    aspect-ratio: 0.714;
+    width: 100px;
+    text-align: center;
+
+}
