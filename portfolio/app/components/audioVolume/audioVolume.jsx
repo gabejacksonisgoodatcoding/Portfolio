@@ -6,7 +6,7 @@ import VolumeSlider from '../volumeSlider/volumeSlider'
 import styles from './audioVolume.module.css'
 
 
-export default function AudioVolume({mySource, imgSource, songName}){
+export default function AudioVolume({mySource, imgSource = "music.png", songName}){
     
     let audioRef = useRef(null);
     let [volume, setVolume] = useState(100);

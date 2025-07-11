@@ -8,9 +8,14 @@ export default function Music() {
         <>
         <MyHeader />
         <div className={styles.music}>
-            <AudioVolume mySource={"gamer_moment.mp3"} imgSource={"dogs.jpeg"} songName={"VG"}/>
-            <AudioVolume mySource={"Guitar_is_cool.mp3"} imgSource = {"mitch.HEIC"} songName = {"Guitar"}/>
-            <AudioVolume />
+            <AudioVolume mySource={"gamer_moment.mp3"} imgSource={"dogs.jpeg"} songName={"VG (Demo)"}/>
+            <AudioVolume mySource={"Guitar_is_cool.mp3"} imgSource = {"mitch.HEIC"} songName = {"Guitar (Demo)"}/>
+            <AudioVolume mySource={"foreverRemix.mp3"} songName={"Forever Remix (Demo)"}/>
+            <AudioVolume mySource={"HEY_GABE.mp3"} songName={"Hey Gabe"}/>
+            <AudioVolume mySource={"House_Track.mp3"} songName={"House Track (Demo)"}/>
+
+
+
         </div>
         </>
     );

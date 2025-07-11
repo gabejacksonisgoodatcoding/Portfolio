@@ -15,17 +15,12 @@
     background-color: rgb(40, 40, 40);
 }
 .croppedImage{
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
     overflow: hidden;
     border-radius: 10px;
 }
 
-.croppedImage img{
-    width: 500px;
-    height: 500px;
-    margin: -125px 0 0 0;
-}
 
 .songTitle{
     color: yellow;

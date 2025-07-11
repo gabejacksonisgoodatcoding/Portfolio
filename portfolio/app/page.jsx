@@ -2,13 +2,14 @@
 import React from 'react'
 import MyHeader from '@/app/components/myHeader/myHeader'
 import './pageStyle.css'
-import Link from 'next/link';
 
 
 export default function Home() {
   
   return (
   <>
+
+  <title > Welcome to my Website!</title>
   <MyHeader />
 
     <h1 className={"welcome"}>

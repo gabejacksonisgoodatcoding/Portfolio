@@ -1,3 +1,7 @@
 {
-  "/cardgame/page": "app/cardgame/page.js"
+  "/icon.png/route": "app/icon.png/route.js",
+  "/resume/page": "app/resume/page.js",
+  "/cardgame/page": "app/cardgame/page.js",
+  "/page": "app/page.js",
+  "/music/page": "app/music/page.js"
 }

@@ -10,16 +10,15 @@ export default function VolumeSlider({volume, volumeChange}){
 
     return(
         <div className = {styles.slidecontainer}>
-        <input 
+        <input className = {styles.sliderInput}
         value={volume}
         type="range" 
         min="0" 
         max="100"
         onChange={e => volumeChange(e.target.value)}
-        className="slider" 
         id="myRange"
         />
-        <p>{volume}%</p>
+        <p className = {styles.percent}>  {volume}%</p>
         </div>
     );
 }

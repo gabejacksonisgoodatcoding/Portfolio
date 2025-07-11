@@ -7,7 +7,7 @@ export default function Resume(){
         <>
         <MyHeader/>
         <div className={styles.resume}>
-            <img className = {styles.image} src='resume-6.pdf' />
+            <img className = {styles.image} src='resume-7.pdf' />
         </div>
         </>
     )

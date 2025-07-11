@@ -1,0 +1,134 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/components/volumeSlider/volumeSlider.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+.volumeSlider_slidecontainer__gclrH{
+    display: inline-flex;
+    width: 80%;
+    background-color: rgb(40, 40, 40);
+    padding: 1rem;
+    border-radius: 50px;
+    justify-content: center;
+    border: 1px solid yellow;
+    margin: 6px;
+
+}
+.volumeSlider_sliderInput__LWlC2{
+
+}
+
+.volumeSlider_percent__ewQd5{
+    padding-left: .25rem;
+    text-align: center;
+    min-width: 4ch;
+}
+
+
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/components/audioVolume/audioVolume.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.audioVolume_audioVolume__bufpo{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+    margin-top: 12px;
+    padding:12px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+    
+}
+.audioVolume_myAudio__HQy1c{
+    background-color: rgb(40, 40, 40);
+}
+.audioVolume_croppedImage__3Jdgr{
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+.audioVolume_songTitle__H7wqq{
+    color: yellow;
+    font-size: large;
+}
+
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/components/myHeader/myHeader.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.myHeader_myHeader__emtic{
+    display: flex;
+    background-color: blueviolet;
+    justify-content: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 2px white
+}
+
+.myHeader_myLinks__9Bocl{
+    padding-left: 10px; 
+    padding-right: 10px;
+    color: black;
+    text-decoration: underline;
+    transition: color .3s ease;
+ }
+
+
+.myHeader_linkbox__DXBZc{
+    color: black;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    margin-inline-start: 10px;
+    border: solid 2px black; 
+    justify-content: center;
+    display: inline;
+    text-align: center;
+
+ }
+
+.myHeader_linkbox__DXBZc::before{
+    content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;   
+  transform: translateY(100%); 
+  transition: transform 0.5s ease;
+  z-index: 0; 
+}
+
+.myHeader_linkbox__DXBZc:hover::before{
+    transform: translateY(0);
+}
+
+.myHeader_linkbox__DXBZc > *{
+    position: relative;
+    z-index: 1;
+}
+
+.myHeader_myLinks__9Bocl:hover{
+    color:yellow;
+    
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/music/music.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.music_music__VCMi2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+    gap: 12px;
+    height: fit-content;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
