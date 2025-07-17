@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     border: solid 2px yellow;
-    margin-top: 1rem;
+    margin-top: .5rem;
     padding: 12px;
     border-radius: 2px;
 
@@ -15,4 +15,13 @@
 .image{
     width: 500px;
     height: 700px;
+}
+
+.download{
+    margin-inline-start: -26.6rem;
+    display: flex;
+    justify-content: center;
+}
+.download a{
+    text-decoration: underline;
 }
