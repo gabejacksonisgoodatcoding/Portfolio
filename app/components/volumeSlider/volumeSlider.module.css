@@ -1,0 +1,20 @@
+.slidecontainer{
+    display: inline-flex;
+    width: 80%;
+    background-color: rgb(40, 40, 40);
+    padding: 1rem;
+    border-radius: 50px;
+    justify-content: center;
+    border: 1px solid yellow;
+    margin: 6px;
+
+}
+
+.percent{
+    padding-left: .25rem;
+    text-align: center;
+    min-width: 4ch;
+}
+
+
+

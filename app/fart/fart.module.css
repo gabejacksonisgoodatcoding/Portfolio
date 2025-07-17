@@ -1,0 +1,18 @@
+
+.fart{
+    position: absolute;
+    text-align: center;
+    border: solid 4px black;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    padding-left:1rem;
+    padding-right: 1rem;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.fart button{
+    cursor: pointer;
+    font-size: 4rem;
+}

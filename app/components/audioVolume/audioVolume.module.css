@@ -1,0 +1,29 @@
+.audioVolume{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+    margin-top: 12px;
+    padding:12px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+    
+}
+.myAudio{
+    background-color: rgb(40, 40, 40);
+}
+.croppedImage{
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+.songTitle{
+    color: yellow;
+    font-size: large;
+}
+

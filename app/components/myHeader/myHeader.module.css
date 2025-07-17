@@ -1,0 +1,54 @@
+.myHeader{
+    display: flex;
+    justify-content: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 2px;
+
+}
+
+.myLinks{
+    padding-left: 10px; 
+    padding-right: 10px;
+    color: white;
+    text-decoration: underline;
+    transition: color .3s ease;
+ }
+
+
+.linkbox{
+    position: relative;
+    overflow: hidden;
+    margin-inline-start: 10px;
+    justify-content: center;
+    display: inline;
+    text-align: center;
+
+ }
+
+.linkbox::before{
+    content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;   
+  transform: translateY(100%); 
+  transition: transform 0.5s ease;
+  z-index: 0; 
+}
+
+.linkbox:hover::before{
+    transform: translateY(0);
+}
+
+.linkbox > *{
+    position: relative;
+    z-index: 1;
+}
+
+.myLinks:hover{
+    color:yellow;
+    
+}
