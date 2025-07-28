@@ -1,0 +1,51 @@
+
+
+.square{
+    font-size: 24px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    float: left;
+}
+
+.board{
+    
+    box-sizing: border-box;
+    width: 148px;
+    height: fit-content;
+}
+
+.game{
+    display: flex;
+    margin-inline-start: 40%;
+    height: fit-content;
+}
+
+.winningsquare{
+    color: green;
+    font-size: 24px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+
+.status{
+    display: flex;
+    flex-direction: column;
+}
+
+.game_board{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 170px;
+}
+
+.game_info button{
+    cursor: pointer;
+}

@@ -3,8 +3,29 @@ import React from 'react'
 import MyHeader from '@/app/components/myHeader/myHeader'
 import styles from './page.module.css'
 
+  const skills =[
+    {title: 'C++', id: 1},
+    {title :'Python', id: 2},
+    {title: 'HTML' , id: 3},
+    {title: 'CSS', id: 4},
+    {title: 'Javascript', id: 5},
+    {title: 'SQL', id: 6},
+    {title: 'Leadership', id: 7},
+    {title: 'Fl Studio', id: 8},
+    {title: 'Github', id: 9}
+  ]
+
 
 export default function Home() {
+
+  const listItems = skills.map(skill => 
+
+    <li
+        key={skill.id}
+        >
+        {skill.title}
+        </li>
+  );
   
   return (
   <>
@@ -61,15 +82,7 @@ export default function Home() {
           Skills
         </h5>
         <ul>
-          <li>C++</li>
-          <li>Python</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
-          <li>SQL</li>
-          <li>Leadership</li>
-          <li>Fl Studio</li>
-          <li>Github</li>
+        {listItems}
         </ul>
     </div>
     </div>
