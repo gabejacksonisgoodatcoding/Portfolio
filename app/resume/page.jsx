@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import MyHeader from '@/app/components/myHeader/myHeader';
 import styles from './resume.module.css';
@@ -11,7 +12,8 @@ export default function Resume(){
         </div>
 
         <div className={styles.resume}>
-            <img className = {styles.image} src='resume-8.pdf' />
+            <img className = {styles.image} src='Gabriel-Jackson-Resume.jpg' alt='Resume'
+            />
         </div>
 
         </>

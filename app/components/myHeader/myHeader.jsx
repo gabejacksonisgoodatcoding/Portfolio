@@ -19,6 +19,9 @@ export default function MyHeader() {
       <div className={styles.linkbox}>
         <Link className={styles.myLinks} href='/tic_tac_toe'>Tic Tac Toe</Link>
     </div>
+      <div className={styles.linkbox}>
+        <Link className={styles.myLinks} href='/Blackjack'>Blackjack</Link>
+    </div>
 
   </header>
 

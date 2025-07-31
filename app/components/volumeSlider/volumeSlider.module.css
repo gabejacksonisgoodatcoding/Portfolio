@@ -1,6 +1,7 @@
 .slidecontainer{
     display: inline-flex;
-    width: 80%;
+    width: 236px;
+
     background-color: rgb(40, 40, 40);
     padding: 1rem;
     border-radius: 50px;
@@ -11,9 +12,15 @@
 }
 
 .percent{
-    padding-left: .25rem;
+    width: 41px;
+    float: left;
     text-align: center;
     min-width: 4ch;
+}
+
+.sliderInput{
+    
+    width: 236;
 }
 
 

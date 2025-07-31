@@ -5,7 +5,7 @@ import styles from './volumeSlider.module.css';
 
 
 
-export default function VolumeSlider({volume, volumeChange}){
+export default function VolumeSlider({volume, volumeChange, source}){
 
 
     return(
@@ -18,6 +18,7 @@ export default function VolumeSlider({volume, volumeChange}){
         onChange={e => volumeChange(e.target.value)}
         id="myRange"
         />
+  
         <p className = {styles.percent}>  {volume}%</p>
         </div>
     );
