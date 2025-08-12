@@ -1,0 +1,21 @@
+.Game{
+    
+    overflow:visible;
+}
+.Game img{
+    max-height:200px;
+    aspect-ratio: initial;
+}
+
+.Game button:disabled{
+    color: transparent;
+}
+
+.displayCards{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
