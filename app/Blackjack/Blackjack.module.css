@@ -1,5 +1,4 @@
 .Game{
-    
     overflow:visible;
 }
 .Game img{
@@ -7,15 +6,50 @@
     aspect-ratio: initial;
 }
 
+.Game button{
+    padding: 6px;
+    border: 2px black solid;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.Game button:hover{
+    color: white;
+    font-weight: 700;
+    background-color: #d12d36;
+}
+
+.myButton{
+    
+    cursor: pointer;
+}
+
+.myButton:disabled{
+    cursor:default;
+    color: gray;
+    opacity: 40%;
+}
+
+
 .Game button:disabled{
-    color: transparent;
+    
+    border: transparent;
+    cursor:default;
+    color: gray;
+    opacity: 40%;
 }
 
 .displayCards{
     display: grid;
     grid-template-columns: repeat(5, 100px);
     gap: 12px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     overflow: auto;
+
+}
+
+.background{
+    min-height: 100vh;
+    background-color: #35654d;
 }
