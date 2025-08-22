@@ -7,7 +7,7 @@ import MyHeader from '../components/myHeader/myHeader';
 
 
 
-export default function Blackjack({winnerFunc, resetButton}){
+export default function Blackjack({winnerFunc, resetButton, betAllow}){
 
     const [myDeck, setMyDeck] = useState(() =>{
         return new Deck();
@@ -64,18 +64,6 @@ export default function Blackjack({winnerFunc, resetButton}){
 
     
 
-
-    function playerTurnStart(){
-       let newHand = dealPlayer(myDeck);
-       console.log(newHand[0] + newHand[1]);
-       setPlayerhand(newHand);
-       for(const card of newHand){
-            setDisplayCards(prev => [...prev, mymap.get(card)]);
-       }
-       setScore(cardAdd(newHand));
-       setButtonDisabled(true)
-    }
-
     function drawCard(){
         let newCard = myDeck.drawCard();
         //console.log(newCard);
@@ -107,12 +95,12 @@ export default function Blackjack({winnerFunc, resetButton}){
     }
     function playerTurnStart(){
         let newHand = dealPlayer(myDeck);
-        console.log(newHand[0] + newHand[1]);
         setPlayerhand(newHand);
         for(const card of newHand){
                 setDisplayCards(prev => [...prev, mymap.get(card)]);
         }
         setScore(cardAdd(newHand));
+        console.log("Display Cards" + displayCards)
 
         newHand = dealPlayer(myDeck);
         let dealerShownCard = newHand[0]
@@ -212,7 +200,7 @@ export default function Blackjack({winnerFunc, resetButton}){
         <>
 
         <div className={styles.Game}> 
-            <button disabled = {buttonDisabled} onClick={playerTurnStart}>Start game</button>
+            <button disabled = {buttonDisabled || betAllow} onClick={playerTurnStart}>Start game</button>
             <br></br>
             <button disabled = {!buttonDisabled || gameOver}onClick={drawCard}>Hit</button>
             <br></br>

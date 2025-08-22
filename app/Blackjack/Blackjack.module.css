@@ -20,7 +20,6 @@
 }
 
 .myButton{
-    
     cursor: pointer;
 }
 
@@ -53,3 +52,43 @@
     min-height: 100vh;
     background-color: #35654d;
 }
+
+.background button{
+    padding: 6px;
+    border: 2px black solid;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.background button:hover{
+    color: white;
+    font-weight: 700;
+    background-color: #d12d36;
+}
+
+.submitMe{
+    padding: 6px;
+    border: 2px black solid;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.submitMe:hover{
+    color: white;
+    font-weight: 700;
+    background-color: #d12d36;
+}
+
+.betMe{
+    padding: 6px;
+    border: 2px black solid;
+    cursor: text;
+    margin-bottom: 6px;
+}
+
+.background{
+    width: 100%;
+    padding-inline-start: 12px;
+    padding-top: 12px;
+}
+
