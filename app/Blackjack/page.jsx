@@ -61,7 +61,6 @@ export default function Game(){
         setBetAllow(false)
     }
 
-    //        {betAllow && <button onClick={submitBet}>Submit Bet Amount</button>}
 
 
     return(

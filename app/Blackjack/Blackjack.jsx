@@ -4,6 +4,7 @@ import styles from './Blackjack.module.css';
 
 import {createPngMap, Deck, dealPlayer, cardAdd} from '@/app/Blackjack/cardToPNG';
 import MyHeader from '../components/myHeader/myHeader';
+import { type } from 'os';
 
 
 
@@ -87,12 +88,36 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     }
 
     function displayHand(){
-        let imageArray = []
-        for(const png of displayCards){
-            imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
-        }
-        return imageArray
+        // let imageArray = []
+        // for(const png of displayCards){
+        //     imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
+        // }
+        // return imageArray
+
+        console.log(displayCards)
+
+        return displayCards.map((png, index) =>(
+        
+            <div className={styles.card}>
+                <audio src={'flipcard-91468.mp3'} type={"audio/mp3"}/>
+            <div className={styles.backCard}>
+                <img key = {index} src={'/CardPNGs/card back red.png'}/>
+            </div>
+            <div className={styles.frontCard}>
+            <img
+                key = {png}
+                src = {`/CardPNGs/${png}`}
+                className = {styles.dealt}
+            />
+            </div>
+            </div>
+        ));
+
+
+
     }
+
+
     function playerTurnStart(){
         let newHand = dealPlayer(myDeck);
         setPlayerhand(newHand);
@@ -123,7 +148,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
         
         newDealerDisplayArray[1] = dealerHiddenCard;
 
-        console.log("New Dealer Display Array[1] = "+ newDealerDisplayArray[1])
+
         setDisplayDealerCards(newDealerDisplayArray);
         setDealerScore(cardAdd(dealerHand));
         setDealerDraw(true);
@@ -188,13 +213,50 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
 
     }
     function displayDealer(){
-        let imageArray = []
-        for(const png of displayDealerCards){
-            imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
-        }
-        return imageArray
-    }
+        // let imageArray = []
+        // for(const png of displayDealerCards){
+        //     imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
+        // }
+        // return imageArray
+        console.log(displayDealerCards)
+        return displayDealerCards.map((png, index) => {
 
+            if (index === 1) {
+
+                return (
+                <div className={styles.card}>
+
+                <div className={styles.backCard}>
+                </div>
+                <div className={styles.frontCard}>
+                    <img
+                    key={png}
+                    src={`/CardPNGs/${png}`}
+                    className={styles.dealt}
+                    alt={png}
+                    />
+                </div>
+                </div>
+                );
+            }
+        return (
+            <div className={styles.card}>
+                <audio src={'flipcard-91468.mp3'} type={"audio/mp3"}/>
+
+            <div className={styles.backCard}>
+                <img key = {index} src={'/CardPNGs/card back red.png'}/>
+            </div>
+            <div className={styles.frontCard}>
+            <img
+                key = {png}
+                src = {`/CardPNGs/${png}`}
+                className = {styles.dealt}
+            />
+            </div>
+            </div>
+        );
+    });
+}
 
     return(
         <>
