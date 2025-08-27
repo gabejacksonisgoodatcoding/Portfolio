@@ -1,4 +1,5 @@
 .Game{
+    position: relative;
     overflow:visible;
 }
 .Game img{
@@ -11,9 +12,11 @@
     border: 2px black solid;
     cursor: pointer;
     margin-bottom: 6px;
+    font-size: larger;
 }
 
 .Game button:hover{
+    
     color: white;
     font-weight: 700;
     background-color: #d12d36;
@@ -38,21 +41,46 @@
     opacity: 40%;
 }
 
-
-
-.background{
-    min-height: 100vh;
-    background-color: #35654d;
+.buttons{
+    position: relative;
+    display: flex;
+    gap: 12px;
+}
+.betButtons button{
+    position: relative;
+    margin-right: 12px;
 }
 
-.background button{
+.betButtons{
+    position: absolute;
+    top: 100px
+}
+.money{
+    position: absolute;
+    top: 100px;
+    right: 200px;
+    font-size: x-large;
+}
+.page{
+    position: absolute;
+    height: 100vh;
+    background-color: #35654d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page button{
     padding: 6px;
     border: 2px black solid;
     cursor: pointer;
     margin-bottom: 6px;
 }
 
-.background button:hover{
+.page button:hover{
+    scale: 1.2;
     color: white;
     font-weight: 700;
     background-color: #d12d36;
@@ -78,11 +106,6 @@
     margin-bottom: 6px;
 }
 
-.background{
-    width: 100%;
-    padding-inline-start: 12px;
-    padding-top: 12px;
-}
 
 .displayCards{
     display: grid;
@@ -90,20 +113,29 @@
     gap: 12px;
     justify-content: left;
     align-items: center;
-    overflow: auto;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    overflow: hidden;
+    padding: 12px;
 }
 
 
 /*Animation stuff*/
 
 .card{
+    
     width: 100px;
     height: 155px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s ease;
+    animation: dealCard 0.6s ease forwards;
+    
+}
+
+.flippedDealer{
+
+    width: 100px;
+    height: 155px;
+    position: relative;
 }
 
 .card:hover{
@@ -111,17 +143,22 @@
 }
 
 .backCard{
-
+    transform-style: preserve-3d;
+    background-color: transparent;
     width: 100px;
     height: 155px;
     position: absolute;
     transform: rotateY(180deg);
-    animation: dealCard 0.6s ease forwards;
+    backface-visibility: hidden;
+
 
 }
 .frontCard{
-    width: 100px;
-    height: 155px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
     position: absolute;
     
 }
@@ -139,5 +176,5 @@
 .dealt{
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    animation: dealCard 0.6s ease forwards;
+    /*animation: dealCard 0.6s ease forwards;*/
 }

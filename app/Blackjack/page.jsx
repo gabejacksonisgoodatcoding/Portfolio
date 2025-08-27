@@ -40,8 +40,11 @@ export default function Game(){
     }
 
     function resetGame(){
+        if(playerMoney <=0){
+            alert("You call your mom for more money")
+            setPlayerMoney(100);
+        }
         setWinner("")
-        console.log("Hello ")
         setReset(false);
         setResetAllow(false);
         setHasStarted(true);
@@ -52,39 +55,62 @@ export default function Game(){
         return (<button  disabled = {!resetAllow} className= {styles.myButton}onClick={resetGame}>Play Again</button>);
     }
 
-    function playerBet(betAmount){
-        setBetAmount(betAmount)
-                                                                                                                                                                                
-    }
     function submitBet(){
+
+        if(betAmount < 0){
+            alert("Bet cannot be negative")
+            return
+        }
+        if(playerMoney - betAmount <0){
+            alert("Not enough money")
+            return
+        }else{
+            setPlayerMoney(playerMoney - betAmount)
+            setBetAllow(false) 
+        }
+
         setPlayerMoney(playerMoney - betAmount)
         setBetAllow(false)
     }
 
+        //   {betAllow &&<form onSubmit={
 
+        //     e=>{
+        //         e.preventDefault();
+        //         if(betAmount > playerMoney){
+        //             alert("You dont have enough money!")
+        //             return
+        //         }
+        //         submitBet()
+        //     }
+        // }>
+        // <input placeholder="Bet"className={styles.betMe}id="bet" name='bet'type='number' max = {playerMoney} onChange={e => playerBet(e.target.value)}/>
+        // <br></br>
+        // <input className={styles.submitMe}type='submit'></input>
+        // </form>}
+
+        function bet(amount){
+            setBetAmount(betAmount + amount);
+        }
 
     return(
         <>
         <MyHeader>
         </MyHeader>
-        <div className={styles.background}>
-        {betAllow &&<form onSubmit={
-
-            e=>{
-                e.preventDefault();
-                if(betAmount > playerMoney){
-                    alert("You dont have enough money!")
-                    return
-                }
-                submitBet()
-            }
-        }>
-        <input placeholder="Bet"className={styles.betMe}id="bet" name='bet'type='number' max = {playerMoney} onChange={e => playerBet(e.target.value)}/>
-        <br></br>
-        <input className={styles.submitMe}type='submit'></input>
-        </form>}
-        Player Money: {playerMoney} <br />
-        Bet Amount: {betAmount}
+        <div className={styles.page}>
+        {betAllow && <div className={styles.betButtons}>
+            <button onClick={() => {bet(-50)}}>bet -$50</button> 
+            <button onClick={()=> {bet(-25)}}>bet -$25</button>
+            <button onClick={() => {bet(25)}}>bet +$25</button> 
+            <button onClick={()=> {bet(50)}}>bet +$50</button>
+            <br></br>
+            <button onClick={submitBet}> Submit Bet</button>
+        </div>
+        }
+        <div className={styles.money}>
+            Player Money: ${playerMoney} <br />
+            Bet Amount: ${betAmount}
+        </div>
         {reset && <Blackjack winnerFunc = {gameSetWinner} resetButton = {resetButton} betAllow={betAllow}/>}
         {winner}
         <br></br>

@@ -5,6 +5,8 @@ import styles from './Blackjack.module.css';
 import {createPngMap, Deck, dealPlayer, cardAdd} from '@/app/Blackjack/cardToPNG';
 import MyHeader from '../components/myHeader/myHeader';
 import { type } from 'os';
+import { Allerta_Stencil } from 'next/font/google';
+
 
 
 
@@ -34,9 +36,10 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     const [playerEndTurn, setPlayerEndTurn] = useState(false);
     const [dealerEndTurn, setDealerEndTurn] = useState(false);
     const [gameOver, setGameOver] = useState(false);
-    
-    
 
+    
+   // const flipSound = new Audio("flipcard-91468.mp3");
+    
 
 
     useEffect(()=>{
@@ -88,18 +91,13 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     }
 
     function displayHand(){
-        // let imageArray = []
-        // for(const png of displayCards){
-        //     imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
-        // }
-        // return imageArray
 
-        console.log(displayCards)
-
-        return displayCards.map((png, index) =>(
+    
         
-            <div className={styles.card}>
-                <audio src={'flipcard-91468.mp3'} type={"audio/mp3"}/>
+        return displayCards.map((png, index) =>(
+            
+
+            <div key = {index} className={styles.card}>
             <div className={styles.backCard}>
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
             </div>
@@ -213,19 +211,14 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
 
     }
     function displayDealer(){
-        // let imageArray = []
-        // for(const png of displayDealerCards){
-        //     imageArray.push(<img key={png} src={`/CardPNGs/${png}`}></img>);
-        // }
-        // return imageArray
-        console.log(displayDealerCards)
+    
+
         return displayDealerCards.map((png, index) => {
 
-            if (index === 1) {
+            if (index === 1 && !playerEndTurn) {
 
                 return (
-                <div className={styles.card}>
-
+                <div key = {index} className={styles.flippedDealer}>
                 <div className={styles.backCard}>
                 </div>
                 <div className={styles.frontCard}>
@@ -240,9 +233,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
                 );
             }
         return (
-            <div className={styles.card}>
-                <audio src={'flipcard-91468.mp3'} type={"audio/mp3"}/>
-
+            <div key= {index} className={styles.card}>
             <div className={styles.backCard}>
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
             </div>
@@ -262,13 +253,15 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
         <>
 
         <div className={styles.Game}> 
-            <button disabled = {buttonDisabled || betAllow} onClick={playerTurnStart}>Start game</button>
-            <br></br>
-            <button disabled = {!buttonDisabled || gameOver}onClick={drawCard}>Hit</button>
-            <br></br>
-            <button disabled = {!buttonDisabled || gameOver} onClick={dealerTurnStart}>Stand</button>
-            <br></br>
-            {resetButton()}
+            <div className={styles.buttons}>
+                <button disabled = {buttonDisabled || betAllow} onClick={playerTurnStart}>Start game</button>
+                <br></br>
+                <button disabled = {!buttonDisabled || gameOver}onClick={drawCard}>Hit</button>
+                <br></br>
+                <button disabled = {!buttonDisabled || gameOver} onClick={dealerTurnStart}>Stand</button>
+                <br></br>
+                {resetButton()}
+            </div>
             {buttonDisabled && <p>Your Cards:</p>}
             {buttonDisabled && <p>Your Score: {score}</p>}
             <div className={styles.displayCards}>
@@ -279,7 +272,6 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
              <div className={styles.displayCards}>
                 {displayDealer()}
             </div>
-            
         </div>
 
         </>
