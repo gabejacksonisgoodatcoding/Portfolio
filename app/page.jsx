@@ -35,7 +35,7 @@ export default function Home() {
   <div className={styles.subHeader}>
   <div className={styles.subHeaderContent}>
   <div className={styles.profilePic}>
-    <img src={"resumePic.jpg"}>
+    <img src={"resumePic.JPG"}>
     </img>
   </div>
   <div className={styles.textHeader}>
