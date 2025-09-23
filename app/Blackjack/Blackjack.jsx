@@ -4,19 +4,16 @@ import styles from './Blackjack.module.css';
 
 import {createPngMap, Deck, dealPlayer, cardAdd} from '@/app/Blackjack/cardToPNG';
 import MyHeader from '../components/myHeader/myHeader';
-import { type } from 'os';
-import { Allerta_Stencil } from 'next/font/google';
 
 
 
-
-export default function Blackjack({winnerFunc, resetButton, betAllow}){
+export default function Blackjack({winnerFunc, resetButton, betAllow, playerMoney, betAmount, setBetAmount, setPlayerMoney}){
 
     const [myDeck, setMyDeck] = useState(() =>{
         return new Deck();
     });
 
-    const[playerHand, setPlayerhand] = useState([]);
+    const[playerHand, setPlayerhand] = useState([[]]);
     const [dealerHand, setDealerHand] = useState([]);
 
     const[displayCards, setDisplayCards] = useState([]);
@@ -36,6 +33,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     const [playerEndTurn, setPlayerEndTurn] = useState(false);
     const [dealerEndTurn, setDealerEndTurn] = useState(false);
     const [gameOver, setGameOver] = useState(false);
+    const [allowDouble, setAllowDouble] = useState(false)
 
     
    // const flipSound = new Audio("flipcard-91468.mp3");
@@ -66,7 +64,19 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     }, [score, dealerScore, dealerEndTurn])
 
 
-    
+
+    function doubleAllow(){
+        if(playerMoney >= betAmount){
+            setAllowDouble(true)
+        }
+    }
+
+    function double(){
+        setBetAmount(2*betAmount)
+        setPlayerMoney(playerMoney - betAmount)
+        drawCard()
+        dealerTurnStart()
+    }
 
     function drawCard(){
         let newCard = myDeck.drawCard();
@@ -74,7 +84,6 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
         let newHand = [...playerHand.slice(0, playerHand.length + 1), newCard];
         setPlayerhand(newHand);
         setDisplayCards(prev => [...prev, mymap.get(newCard)]);
-        console.log("Player Hand: "+ playerHand);
         setScore(cardAdd(newHand));
     
     }
@@ -92,11 +101,8 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
 
     function displayHand(){
 
-    
-        
         return displayCards.map((png, index) =>(
-            
-
+    
             <div key = {index} className={styles.card}>
             <div className={styles.backCard}>
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
@@ -110,10 +116,8 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
             </div>
             </div>
         ));
-
-
-
     }
+    
 
 
     function playerTurnStart(){
@@ -123,8 +127,8 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
                 setDisplayCards(prev => [...prev, mymap.get(card)]);
         }
         setScore(cardAdd(newHand));
-        console.log("Display Cards" + displayCards)
-
+        doubleAllow();
+        
         newHand = dealPlayer(myDeck);
         let dealerShownCard = newHand[0]
         setDealerHiddenCard(mymap.get(newHand[1])); 
@@ -211,7 +215,6 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
 
     }
     function displayDealer(){
-    
 
         return displayDealerCards.map((png, index) => {
 
@@ -249,19 +252,24 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
     });
 }
 
+
+
     return(
         <>
-
         <div className={styles.Game}> 
-            <div className={styles.buttons}>
-                <button disabled = {buttonDisabled || betAllow} onClick={playerTurnStart}>Start game</button>
+            {!betAllow && <div className={styles.buttons}>
+
+                <button disabled={buttonDisabled}onClick={playerTurnStart}>Start game</button>
                 <br></br>
-                <button disabled = {!buttonDisabled || gameOver}onClick={drawCard}>Hit</button>
+                <button disabled={!buttonDisabled || gameOver} onClick={drawCard}>Hit</button>
                 <br></br>
-                <button disabled = {!buttonDisabled || gameOver} onClick={dealerTurnStart}>Stand</button>
+                <button disabled ={!buttonDisabled || gameOver} onClick={dealerTurnStart}>Stand</button>
                 <br></br>
+                <button disabled={!buttonDisabled || gameOver || !allowDouble} onClick={double}>Double</button>
                 {resetButton()}
-            </div>
+            </div>}
+            
+            <div className={styles.cards}>
             {buttonDisabled && <p>Your Cards:</p>}
             {buttonDisabled && <p>Your Score: {score}</p>}
             <div className={styles.displayCards}>
@@ -271,6 +279,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow}){
             {buttonDisabled && <p>Dealer Score: {dealerScore}</p>}
              <div className={styles.displayCards}>
                 {displayDealer()}
+            </div>
             </div>
         </div>
 

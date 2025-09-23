@@ -99,6 +99,7 @@ export default function Game(){
         </MyHeader>
         <div className={styles.page}>
         {betAllow && <div className={styles.betButtons}>
+            <h1>Make your Bet</h1>
             <button onClick={() => {bet(-50)}}>bet -$50</button> 
             <button onClick={()=> {bet(-25)}}>bet -$25</button>
             <button onClick={() => {bet(25)}}>bet +$25</button> 
@@ -111,10 +112,11 @@ export default function Game(){
             Player Money: ${playerMoney} <br />
             Bet Amount: ${betAmount}
         </div>
-        {reset && <Blackjack winnerFunc = {gameSetWinner} resetButton = {resetButton} betAllow={betAllow}/>}
         {winner}
         <br></br>
         </div>
+        {reset && <Blackjack winnerFunc = {gameSetWinner} resetButton = {resetButton} betAllow={betAllow} playerMoney={playerMoney} setPlayerMoney = {setPlayerMoney} betAmount = {betAmount} setBetAmount = {setBetAmount}/>}
+
         </>
     );
 };
