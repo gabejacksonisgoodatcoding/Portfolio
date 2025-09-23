@@ -2,8 +2,6 @@
 import MyHeader from '@/app/components/myHeader/myHeader';
 import styles from './tic_tac_toe.module.css'
 import {useState} from 'react'
-import next from 'next';
-import { create } from 'domain';
 
 
 function Square({value, onSquareClick, classname}){
