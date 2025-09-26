@@ -1,7 +1,13 @@
+.entirePage{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+
+
 
 .textHeader{
     margin-inline-start: 10px;
-
 }
 
 .textHeader h1{

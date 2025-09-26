@@ -29,9 +29,10 @@ export default function Home() {
   
   return (
   <>
-
-  <title > Welcome to my Website!</title>
   <MyHeader />
+  <div className={styles.entirePage}>
+  <title > Welcome to my Website!</title>
+
   <div className={styles.subHeader}>
   <div className={styles.subHeaderContent}>
   <div className={styles.profilePic}>
@@ -86,7 +87,7 @@ export default function Home() {
         </ul>
     </div>
     </div>
-
+    </div>
 
 
 
