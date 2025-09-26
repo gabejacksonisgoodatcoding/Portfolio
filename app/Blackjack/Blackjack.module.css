@@ -1,4 +1,7 @@
 .Game{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
     overflow:visible;
 }
@@ -38,14 +41,13 @@
     position: relative;
     display: flex;
     gap: 12px;
-    margin-top: 12px;
 }
 
 .buttons button{
     padding: 6px;
     border: 2px black solid;
     cursor: pointer;
-    margin-bottom: 6px;
+
     font-size: larger;
 }
 
@@ -67,24 +69,28 @@
     font-weight: bold;
 }
 
-
+.submitBet{
+    display: flex;
+    justify-content: center;
+}
 
 .betButtons{
-    position: absolute;
-    top: 25px
+    position: relative;
 }
 .money{
-    position: absolute;
-    top: 80px;
-    right: 270px;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
     font-size: x-large;
 }
 .page{
-    position: absolute;
-    height: 100vh;
+    min-height: 100vh;
+    position:relative;
+    height: fit-content;
     background-color: #35654d;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     width: 100%;

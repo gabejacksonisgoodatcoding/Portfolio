@@ -105,7 +105,9 @@ export default function Game(){
             <button onClick={() => {bet(25)}}>bet +$25</button> 
             <button onClick={()=> {bet(50)}}>bet +$50</button>
             <br></br>
+            <div className={styles.submitBet}> 
             <button onClick={submitBet}> Submit Bet</button>
+            </div>
         </div>
         }
         <div className={styles.money}>
@@ -114,9 +116,9 @@ export default function Game(){
         </div>
         {winner}
         <br></br>
-        </div>
+        
         {reset && <Blackjack winnerFunc = {gameSetWinner} resetButton = {resetButton} betAllow={betAllow} playerMoney={playerMoney} setPlayerMoney = {setPlayerMoney} betAmount = {betAmount} setBetAmount = {setBetAmount}/>}
-
+        </div>
         </>
     );
 };
