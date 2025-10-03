@@ -22,6 +22,9 @@ export default function MyHeader() {
       <div className={styles.linkbox}>
         <Link className={styles.myLinks} href='/Blackjack'>Blackjack</Link>
     </div>
+      <div className={styles.linkbox}>
+        <Link className={styles.myLinks} href='/Art'>DVD</Link>
+    </div>
 
   </header>
 
