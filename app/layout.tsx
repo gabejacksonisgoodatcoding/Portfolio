@@ -14,12 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gabe's Website",
-  description: "Gabe's super cool and awesome website!",
+  title: "Hire Gabriel Jackson",
+  description: "A portfolio website for Gabriel Jackson",
     icons: {
       icon: [
-
-        {url: "/icon.png", type:"image/png"},
+        {url: "/icon.JPG", type:"image/JPG"},
       ],
     },
 };
