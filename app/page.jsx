@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import MyHeader from '@/app/components/myHeader/myHeader'
-import styles from './page.module.css'
+import  './page.css'
 import Blob  from '@/app/components/home/blob/blob'
 
   const skills =[
@@ -31,40 +31,38 @@ export default function Home() {
   return (
   <>
   <MyHeader />
-  <div className={styles.entirePage}>
+  <div className="entirePage">
   <title > Welcome to my Website!</title>
-  <div className={styles.subHeader}>
-  <div className={styles.subHeaderContent}>
-  <div className={styles.profilePic}>
-    <img src={"resumePic.JPG"}>
-    </img>
+
+  {/* header*/}
+  <div className="relative flex justify-center items-center w-[100vw]">
+    <h1 className='sm: text-3xl md:text-5xl'>Gabriel Jackson</h1>
   </div>
-  <div className={styles.textHeader}>
-    <h1>
-    Gabriel Jackson
-    </h1>
-    <div className={styles.contact}>
-      <h2>Contact me:</h2>
-    <a href="mailto:gabejackson01@gmail.com">gabejackson01@gmail.com</a>
-    <h2>Check out my <a href="https://github.com/gabejacksonisgoodatcoding">github!</a></h2>
-    <h2>Check out my <a href="https://soundcloud.com/gabe-jackson-517186998">soundcloud!</a></h2>
+
+  {/* body*/}
+
+    <div className="bodyGrid">
+      <div className="rounded-3xl bg-green-200/60">
+      <Blob blobTitle={"About me"} blobBody={"Hi, I'm Gabriel Jackson — a Computer Science and Engineering student at UConn with a passion for building clean, responsive, and user-focused web applications."}></Blob>
+      </div>
+    <div className="rounded-3xl bg-blue-200/60">
+      <Blob blobTitle={"My Journey"} blobBody={"After graduating I found myself struggling to find a job. In response, I set out to learn more, work harder, and create something tangible to show my progress"}></Blob>
     </div>
-    </div>
+    <div className="rounded-3xl bg-yellow-200/70">
+      <Blob blobTitle={"Projects"} blobBody={"UConn Senior Design Project \n Infosys Code Conversion Chatbot \n Portfolio Website"}></Blob>
     </div>
     </div>
 
-    <div class="grid grid-cols-20 grid-rows-5 justify-center items-center pt-4">
-      <div class="col-start-2 col-span-8 rounded-3xl bg-green-200/60 p-5">
-      <Blob blobTitle={"About me"} blobBody={"Hi, I'm Gabriel Jackson — a Computer Science and Engineering student at UConn with a passion for building clean, responsive, and user-focused web applications."}></Blob>
-      </div>
-    <div class="col-start-12 col-span-8 row-span-2   rounded-3xl p-5 bg-blue-200/60">
-      <Blob blobTitle={"My Journey"} blobBody={"After graduating I found myself struggling to find a job. In response, I set out to learn more, work harder, and create something tangible to show my progress"}></Blob>
+    {/*Footer */}
+
+    <div className="fixed bottom-0 left-0 w-full bg-gray-200/20 text-center">
+    
+      <h2>Contact me:</h2>
+      <a href="mailto:gabejackson01@gmail.com">gabejackson01@gmail.com</a>
+      <br></br>
+      <a href="https://github.com/gabejacksonisgoodatcoding">Check out my github!</a>
     </div>
-    <div class="row-span-2 col-start-3 col-span-6 rounded-3xl p-5 bg-yellow-200/70">
-      <Blob blobTitle={"Projects"} blobBody={"UConn Senior Design Project \n Infosys Code Conversion Chatbot"}></Blob>
-    </div>
-    </div>
-    </div>
+  </div>
   </>
 );
   }
