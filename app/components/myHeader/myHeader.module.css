@@ -4,7 +4,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 2px;
-    min-width: 100vw;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .myLinks{
@@ -16,12 +18,15 @@
 
 
 .linkbox{
+    flex: 0 0 auto;
+    overflow-y: hidden;
+    overflow-x: visible;
     position: relative;
-    overflow: hidden;
     margin-inline-start: 10px;
     justify-content: center;
     display: inline;
     text-align: center;
+    width: fit-content;
 
  }
 
