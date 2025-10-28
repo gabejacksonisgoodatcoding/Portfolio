@@ -10,12 +10,6 @@ export default function MyHeader() {
     <div className={styles.linkbox}>
         <Link className = {styles.myLinks} href='/'>Home</Link>
     </div>
-    <div className={styles.linkbox}>
-        <Link className = {styles.myLinks} href='/music'>Music</Link>
-    </div>
-    <div className={styles.linkbox}>
-        <Link className={styles.myLinks} href='/resume'>Resume</Link>
-    </div>
       <div className={styles.linkbox}>
         <Link className={styles.myLinks} href='/tic_tac_toe'>Tic Tac Toe</Link>
     </div>
@@ -24,6 +18,9 @@ export default function MyHeader() {
     </div>
       <div className={styles.linkbox}>
         <Link className={styles.myLinks} href='/Art'>DVD</Link>
+    </div>
+      <div className={styles.linkbox}>
+        <Link className={styles.myLinks} href='/Planner'>Planner</Link>
     </div>
 
   </header>
