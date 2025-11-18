@@ -1,7 +1,6 @@
 "use client"
 import MyHeader from '../components/myHeader/myHeader';
-import React from 'react';
-import styles from './Art.module.css';
+
 import dynamic from "next/dynamic";
 
 

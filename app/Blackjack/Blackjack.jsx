@@ -103,11 +103,11 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
 
         return displayCards.map((png, index) =>(
     
-            <div key = {index} className={styles.card}>
-            <div className={styles.backCard}>
+            <div key = {index} className='shrink relative mr-2 ml-2'>
+            <div className="shrink bg-transparent absolute">
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
             </div>
-            <div className={styles.frontCard}>
+            <div className="shrink">
             <img
                 key = {png}
                 src = {`/CardPNGs/${png}`}
@@ -117,7 +117,42 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
             </div>
         ));
     }
-    
+    function displayDealer(){
+
+        return displayDealerCards.map((png, index) => {
+
+            if (index === 1 && !playerEndTurn) {
+
+                return (
+                <div key = {index} className='shrink relative'>
+                <div className='shrink relative '>
+                    <img
+                    key={png}
+                    src={`/CardPNGs/${png}`}
+                    className={styles.dealt}
+                    alt={png}
+                    />
+                </div>
+                </div>
+                );
+            }
+
+        return (
+            <div key= {index} className='shrink relatvie mr-2 ml-2'>
+            {/*<div className='shrink bg-transparant absolute'>
+                <img key = {index} src={'/CardPNGs/card back red.png'}/>
+            </div>*/}
+            <div className='shrink relative'>
+            <img
+                key = {png}
+                src = {`/CardPNGs/${png}`}
+                className = {styles.dealt}
+            />
+            </div>
+            </div>
+        );
+    });
+}
 
 
     function playerTurnStart(){
@@ -214,43 +249,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
         setWinnerFunc(result);
 
     }
-    function displayDealer(){
-
-        return displayDealerCards.map((png, index) => {
-
-            if (index === 1 && !playerEndTurn) {
-
-                return (
-                <div key = {index} className={styles.flippedDealer}>
-                <div className={styles.backCard}>
-                </div>
-                <div className={styles.frontCard}>
-                    <img
-                    key={png}
-                    src={`/CardPNGs/${png}`}
-                    className={styles.dealt}
-                    alt={png}
-                    />
-                </div>
-                </div>
-                );
-            }
-        return (
-            <div key= {index} className={styles.card}>
-            <div className={styles.backCard}>
-                <img key = {index} src={'/CardPNGs/card back red.png'}/>
-            </div>
-            <div className={styles.frontCard}>
-            <img
-                key = {png}
-                src = {`/CardPNGs/${png}`}
-                className = {styles.dealt}
-            />
-            </div>
-            </div>
-        );
-    });
-}
+    
 
 
 
@@ -258,7 +257,6 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
         <>
         <div className={styles.Game}> 
             {!betAllow && <div className={styles.buttons}>
-
                 <button disabled={buttonDisabled}onClick={playerTurnStart}>Start game</button>
                 <br></br>
                 <button disabled={!buttonDisabled || gameOver} onClick={drawCard}>Hit</button>
@@ -272,12 +270,12 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
             <div className={styles.cards}>
             {buttonDisabled && <p>Your Cards:</p>}
             {buttonDisabled && <p>Your Score: {score}</p>}
-            <div className={styles.displayCards}>
+            <div className='flex flex-row max-w-[100vw] overflow-hidden'>
                 {displayHand()}
             </div>
             {buttonDisabled && <p>Dealer Cards:</p>}
             {buttonDisabled && <p>Dealer Score: {dealerScore}</p>}
-             <div className={styles.displayCards}>
+             <div className='flex flex-row'>
                 {displayDealer()}
             </div>
             </div>
