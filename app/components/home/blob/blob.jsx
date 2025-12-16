@@ -7,7 +7,7 @@ export default function Blob({blobTitle, blobBody}){
             <p className="whitespace-pre-line">{blobTitle}</p>
             </div>
             <div className="text-2xl text-left px-4">
-            <p>{blobBody}</p>
+            {blobBody}
             </div>
         </div>
     )

@@ -1,17 +1,13 @@
 "use client"
 import { React, useState } from "react"
 import { FaTrash } from "react-icons/fa";
+import { DndContext } from "@dnd-kit/core";
 
 /**
  TODO
     *  Proggress bar
 
  */
-
-
-
-
-
 
 export default function Checklist(){
 
@@ -58,8 +54,8 @@ export default function Checklist(){
     
 
     return(
-        <div className="flex flex-col bg-gray-400 justify-center items-center w-fit p-5 rounded-2xl">
-        <h1 className="flex w-full mt-2 mb-2">To Do</h1>
+        <div className="flex flex-col bg-gray-400 justify-center items-center p-5 rounded-2xl">
+        <h1 className="flex w-full mt-2">To Do</h1>
         {displayTasks()}
         <button onClick={() => addTask()}> +</button>
 

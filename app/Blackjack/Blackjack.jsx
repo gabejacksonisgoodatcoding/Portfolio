@@ -103,7 +103,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
 
         return displayCards.map((png, index) =>(
     
-            <div key = {index} className='shrink relative mr-2 ml-2'>
+            <div key = {index} className='shrink relative mr-2 ml-2 max-w-[20vw]'>
             <div className="shrink bg-transparent absolute">
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
             </div>
@@ -124,7 +124,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
             if (index === 1 && !playerEndTurn) {
 
                 return (
-                <div key = {index} className='shrink relative'>
+                <div key = {index} className='shrink relative max-w-[20vw]'>
                 <div className='shrink relative '>
                     <img
                     key={png}
@@ -138,7 +138,7 @@ export default function Blackjack({winnerFunc, resetButton, betAllow, playerMone
             }
 
         return (
-            <div key= {index} className='shrink relatvie mr-2 ml-2'>
+            <div key= {index} className='shrink relatvie mr-2 ml-2 max-w-[20vw]'>
             {/*<div className='shrink bg-transparant absolute'>
                 <img key = {index} src={'/CardPNGs/card back red.png'}/>
             </div>*/}

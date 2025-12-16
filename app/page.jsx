@@ -19,7 +19,17 @@ import Blob  from '@/app/components/home/blob/blob'
 
 export default function Home() {
 
-  
+  const bloblinks = 
+  <div>
+  <a className='underline'href='https://github.com/Anteaterman23/sdp-cse31-belimo'>UConn Senior Design Project</a>
+  <br></br>
+  <p>
+  Infosys Code Conversion Chatbot
+  </p>
+  <p>Portfolio Website</p>
+  </div>
+
+
   return (
   <div className='flex overflow-x-hidden min-h-screen flex-col'>
   <MyHeader />
@@ -39,8 +49,8 @@ export default function Home() {
     <div className="p-3 rounded-3xl bg-blue-200/60">
       <Blob blobTitle={"My Journey"} blobBody={"After graduating I found myself struggling to find a job. In response, I set out to learn more, work harder, and create something tangible to show my progress"}></Blob>
     </div>
-    <div className="p-3 rounded-3xl bg-yellow-200/70 whitespace-pre-line">
-      <Blob blobTitle={"Projects"} blobBody={"UConn Senior Design Project \n Infosys Code Conversion Chatbot\n Portfolio Website\n"}></Blob>
+    <div className="p-3 rounded-3xl bg-yellow-200/70 whitespace-pre-line ">
+      <Blob blobTitle={"Projects"} blobBody={bloblinks}></Blob>
     </div>
     </div>
     </div>
