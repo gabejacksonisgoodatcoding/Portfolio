@@ -37,7 +37,7 @@ export default function Home() {
 
   {/* header*/}
   <div className="relative flex justify-center items-center w-full">
-    <h1 className='sm: text-5xl md:text-6xl bg-green-500 bg-clip-text text-transparent'>Gabriel Jackson</h1>
+    <h1 className='sm: text-5xl md:text-6xl bg-white bg-clip-text text-transparent'>Gabriel Jackson</h1>
   </div>
 
     {/* body*/}
