@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.jsx", "app/Blackjack/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.jsx", "app/Blackjack/page.jsx", "app/MTG/backEnd/CardGrid.tsx", "app/MTG/backEnd/cards.server.tsx"],
   "exclude": ["node_modules"]
 }

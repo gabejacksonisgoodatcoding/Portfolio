@@ -1,0 +1,102 @@
+"use client"
+import { useState, useEffect } from "react";
+import type { Card } from "./cards.server";
+
+interface RenderCardHoverProps {
+  card: Card;
+  pos: { x: number; y: number };
+}
+//Function that handles the hovering over rendering
+function RenderCardHover({ card, pos }: RenderCardHoverProps){
+
+
+  function getCardImageNormal(card: Card){
+    var image;
+    if (card.image_uris) {
+      image = card.image_uris.normal;
+    } else if (card.card_faces) {
+        image = card.card_faces?.[0]?.image_uris?.normal
+      }
+    return image;
+  }
+
+    let image = getCardImageNormal(card);
+    const imgWidth = 240;
+    const imgHeight = 360;
+    const x = Math.min(pos.x + 20, window.innerWidth - imgWidth);
+    const y = Math.min(pos.y + 20, window.innerHeight - imgHeight);
+    
+    return(
+        <div className = "fixed z-50 p-2 border-2 pointer-events-none" 
+        style={{
+        left: x,
+        top: y,
+        width: 240
+      }}>
+        <img className = "" src={image} loading="lazy"></img>
+        </div>
+    )
+  }
+
+export default function CardGrid({ cards }: {cards: Card[]}) {
+
+  const [isHovering, setIsHovering] = useState(false);
+  const [hoverCard, setHoverCard] = useState<Card>()
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [isCards, setIsCards] = useState(true)
+
+  useEffect(() => { 
+    if(cards.length <= 0){
+      setIsCards(false)
+    }
+    else{
+      setIsCards(true)
+    }},[cards]);
+
+
+
+
+  function getCardImageSmall(card: Card) {
+    var image;
+    if (card.image_uris) {
+      image = card.image_uris.small;
+    } else if (card.card_faces) {
+        image = card.card_faces?.[0]?.image_uris?.small
+      }
+    return image;
+
+  }
+
+
+  return (
+    <>
+    {isCards && <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] justify-start items-start h-fit w-full">
+        {cards.map((card) =>( 
+        
+        <div 
+        onMouseMove={(e) => {
+        setPos({
+          x: e.clientX,
+          y: e.clientY
+        });
+      }}
+      onMouseLeave = {()=>setIsHovering(false)} 
+      onMouseEnter = {() => {setIsHovering(true); setHoverCard(card)}} 
+      className = "p-2 flex flex-col items-center"key={card.id} >
+
+        <p className="text-white-500 truncate w-40 hover:text-wrap">{card?.name}</p>
+        <a target="_blank" href={card?.purchase_uris?.tcgplayer || card?.purchase_uris?.cardmarket || card?.purchase_uris?.cardhoarder}>
+        <img  className= "w-full h-auto"src={getCardImageSmall(card)} loading="lazy"></img>
+        </a>
+
+        </div>))}
+    </div>}
+    {!isCards && <div className="justify-center justify-items-center">
+      <h1>No Cards Found</h1>
+    </div>}
+    {isHovering && hoverCard && <RenderCardHover card={hoverCard} pos={pos} />}
+    </>
+  );
+}
+
+
